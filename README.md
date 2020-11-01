@@ -97,6 +97,7 @@ curl --location --request GET 'localhost:8080/sistema_erp/v1/produto/page?tipoPr
 ```
 
 ### Atualizar produto
+Retorno = "Status 204 No content"
 ```console
 curl --location --request PUT 'localhost:8080/sistema_erp/v1/produto/55a6ab79-aff3-44a3-8ec2-3c89a0ed41b3' \
 --header 'Content-Type: application/json' \
