@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+    <changeSet author="joao (generated)" id="1604253457626-1">
+        <createTable tableName="item_pedido">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantidade" type="numeric(19, 2)"/>
+            <column name="valor_total" type="numeric(19, 2)"/>
+            <column name="valor_unitario" type="numeric(19, 2)"/>
+            <column name="pedido_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="produto_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="joao (generated)" id="1604253457626-2">
+        <createTable tableName="pedido">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="codigo" type="VARCHAR(255)"/>
+            <column name="desconto_percentual" type="numeric(19, 2)"/>
+            <column name="desconto_valor" type="numeric(19, 2)"/>
+            <column name="quantidade_total" type="numeric(19, 2)"/>
+            <column name="sub_total" type="numeric(19, 2)"/>
+            <column name="valor_total" type="numeric(19, 2)"/>
+            <column name="data_cadastro" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_finalizado" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="situacao_venda" type="INT"/>
+            <column name="tipo_venda" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="joao (generated)" id="1604253457626-3">
+        <createTable tableName="produto">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ativado" type="BOOL"/>
+            <column name="descricao" type="VARCHAR(255)"/>
+            <column name="tipo_produto" type="INT"/>
+            <column name="valor_atacado" type="numeric(19, 2)"/>
+            <column name="valor_varejo" type="numeric(19, 2)"/>
+            <column name="codigo_ean" type="VARCHAR(255)"/>
+            <column name="codigo_fabricante" type="VARCHAR(255)"/>
+            <column name="codigo_interno" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="joao (generated)" id="1604253457626-4">
+        <addPrimaryKey columnNames="id" constraintName="item_pedido_pkey" tableName="item_pedido"/>
+    </changeSet>
+    <changeSet author="joao (generated)" id="1604253457626-5">
+        <addPrimaryKey columnNames="id" constraintName="pedido_pkey" tableName="pedido"/>
+    </changeSet>
+    <changeSet author="joao (generated)" id="1604253457626-6">
+        <addPrimaryKey columnNames="id" constraintName="produto_pkey" tableName="produto"/>
+    </changeSet>
+    <changeSet author="joao (generated)" id="1604253457626-7">
+        <addForeignKeyConstraint baseColumnNames="pedido_id" baseTableName="item_pedido" constraintName="fk60ym08cfoysa17wrn1swyiuda" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="pedido"/>
+    </changeSet>
+    <changeSet author="joao (generated)" id="1604253457626-8">
+        <addForeignKeyConstraint baseColumnNames="produto_id" baseTableName="item_pedido" constraintName="fktk55mn6d6bvl5h0no5uagi3sf" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="produto"/>
+    </changeSet>
+</databaseChangeLog>
