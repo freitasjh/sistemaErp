@@ -90,4 +90,7 @@ curl --location --request GET 'localhost:8080/sistema_erp/v1/produto/page'
     "empty": false
 }
 ```
-
+### Listar produto com filtro de Tipo de Serviço
+```console
+curl --location --request GET 'localhost:8080/sistema_erp/v1/produto/page?tipoProduto=SERV'
+```
