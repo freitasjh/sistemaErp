@@ -95,3 +95,18 @@ curl --location --request GET 'localhost:8080/sistema_erp/v1/produto/page'
 ```console
 curl --location --request GET 'localhost:8080/sistema_erp/v1/produto/page?tipoProduto=SERV'
 ```
+
+### Atualizar produto
+```console
+curl --location --request PUT 'localhost:8080/sistema_erp/v1/produto/55a6ab79-aff3-44a3-8ec2-3c89a0ed41b3' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "descricao": "Produto 1",
+    "valorAtacado": 22.00,
+    "valorVarejo": 24.50,
+    "ativado": false,
+    "tipoProduto": "PROD",
+    "codigoEan": null,
+    "codigoFabricante": null
+}'
+```
