@@ -100,6 +100,8 @@ curl --location --request GET 'localhost:8080/sistema_erp/v1/produto/page?tipoPr
 ### Atualizar produto
 Retorno = "Status 204 No content"
 ```console
+55a6ab79-aff3-44a3-8ec2-3c89a0ed41b3 = "Id do Produto".
+
 curl --location --request PUT 'localhost:8080/sistema_erp/v1/produto/55a6ab79-aff3-44a3-8ec2-3c89a0ed41b3' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -115,6 +117,7 @@ curl --location --request PUT 'localhost:8080/sistema_erp/v1/produto/55a6ab79-af
 ### Deletar Produto
 Retorno = "Status 204 No content"
 ```console
+edb0f74d-4e54-4186-a527-b12b0e1b8efc = "id do produto"
 curl --location --request DELETE 'localhost:8080/sistema_erp/v1/produto/edb0f74d-4e54-4186-a527-b12b0e1b8efc'
 ```
 
@@ -169,6 +172,7 @@ curl --location --request GET 'localhost:8080/sistema_erp/v1/pedido/page'
 ### Finalizar Pedido
 Retorno = "Status 204 No content"
 ```console
+75002426-1f7d-4b56-96a3-1cbb3b032514 = "Id do Pedido".
 curl --location --request PUT 'localhost:8080/sistema_erp/v1/pedido/fecharVenda/75002426-1f7d-4b56-96a3-1cbb3b032514' \
 --header 'Content-Type: application/json' \
 --data-raw ' {
