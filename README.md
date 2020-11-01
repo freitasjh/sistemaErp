@@ -18,7 +18,7 @@ Para rodar o projeto rode o comando
 mvn spring-boot:run 
 ```
 #
-##Salvar produto
+## Salvar produto
 ```console
 curl --location --request POST 'localhost:8080/sistema_erp/v1/produto/' \
 --header 'Content-Type: application/json' \
@@ -30,3 +30,18 @@ curl --location --request POST 'localhost:8080/sistema_erp/v1/produto/' \
     "ativado": "true"
 }'
 ```
+## Salvar Serviço
+```console
+curl --location --request POST 'localhost:8080/sistema_erp/v1/produto/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "descricao": "Servico 2",
+    "tipoProduto": "SERV",
+    "valorVarejo": "150.00",
+    "valorAtacado": "0.00",
+    "ativado": "true"
+}'
+```
+# Retorno ao salvar produto e serviço
+Status 204 No Content
+
