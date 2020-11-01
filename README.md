@@ -224,3 +224,57 @@ curl --location --request PUT 'localhost:8080/sistema_erp/v1/pedido/fecharVenda/
             ]
         }'
 ```
+### Atualizar Pedido
+```console
+75002426-1f7d-4b56-96a3-1cbb3b032514 = "Id do Pedido".
+curl --location --request PUT 'localhost:8080/sistema_erp/v1/pedido/fecharVenda/75002426-1f7d-4b56-96a3-1cbb3b032514' \
+--header 'Content-Type: application/json' \
+--data-raw ' {
+            "codigo": "2",
+            "tipoVenda": "V",
+            "valorTotal": 425.00,
+            "subTotal": 450.00,
+            "descontoPercentual": 0.00,
+            "descontoValor": 25.00,
+            "quantidadeTotal": 0.00,
+            "dataCadastro": "2020-11-01T15:51:42.908+00:00",
+            "dataFinalizado": "2020-11-01T17:20:04.446+00:00",
+            "situacaoVenda": "F",
+            "listaDeItem": [
+                {
+                    "id": "fe22513d-a6d6-4b20-a7e8-148112b35c4b",
+                    "produto": {
+                        "id": "9c600384-41e3-464e-9823-28d3868df7c5",
+                        "codigoInterno": null,
+                        "descricao": "Produto 1",
+                        "valorAtacado": 0.00,
+                        "valorVarejo": 150.00,
+                        "ativado": true,
+                        "tipoProduto": "PROD",
+                        "codigoEan": null,
+                        "codigoFabricante": null
+                    },
+                    "quantidade": 2.00,
+                    "valorUnitario": 150.00,
+                    "valorTotal": 300.00
+                },
+                {
+                    "id": "e32c3b61-1684-427b-9074-ba42ad945e1b",
+                    "produto": {
+                        "id": "edb0f74d-4e54-4186-a527-b12b0e1b8efc",
+                        "codigoInterno": null,
+                        "descricao": "Servico 2",
+                        "valorAtacado": 0.00,
+                        "valorVarejo": 150.00,
+                        "ativado": true,
+                        "tipoProduto": "SERV",
+                        "codigoEan": null,
+                        "codigoFabricante": null
+                    },
+                    "quantidade": 1.00,
+                    "valorUnitario": 150.00,
+                    "valorTotal": 150.00
+                }
+            ]
+        }'
+```
