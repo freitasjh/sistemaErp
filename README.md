@@ -161,3 +161,7 @@ curl --location --request POST 'localhost:8080/sistema_erp/v1/pedido' \
     ]
 }'
 ```
+### Listar Pedido
+```console
+curl --location --request GET 'localhost:8080/sistema_erp/v1/pedido/page'
+```
