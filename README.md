@@ -18,7 +18,7 @@ Para rodar o projeto rode o comando
 mvn spring-boot:run 
 ```
 #
-## Salvar produto
+### Salvar produto
 ```console
 curl --location --request POST 'localhost:8080/sistema_erp/v1/produto/' \
 --header 'Content-Type: application/json' \
@@ -30,7 +30,7 @@ curl --location --request POST 'localhost:8080/sistema_erp/v1/produto/' \
     "ativado": "true"
 }'
 ```
-## Salvar Serviço
+### Salvar Serviço
 ```console
 curl --location --request POST 'localhost:8080/sistema_erp/v1/produto/' \
 --header 'Content-Type: application/json' \
@@ -42,6 +42,52 @@ curl --location --request POST 'localhost:8080/sistema_erp/v1/produto/' \
     "ativado": "true"
 }'
 ```
-# Retorno ao salvar produto e serviço
+### Retorno ao salvar produto e serviço
 Status 204 No Content
+
+### Listar Produto
+```console
+curl --location --request GET 'localhost:8080/sistema_erp/v1/produto/page'
+
+{
+    "content": [
+        {
+            "id": "27955736-f23a-4f1d-a7f9-f2da32678e71",
+            "codigoInterno": "1",
+            "descricao": "Servico 2",
+            "valorAtacado": 0.00,
+            "valorVarejo": 150.00,
+            "ativado": true,
+            "tipoProduto": "SERVICO",
+            "codigoEan": null,
+            "codigoFabricante": null
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 24,
+        "paged": true,
+        "unpaged": false
+    },
+    "totalPages": 1,
+    "totalElements": 1,
+    "last": true,
+    "number": 0,
+    "sort": {
+        "sorted": true,
+        "unsorted": false,
+        "empty": false
+    },
+    "size": 24,
+    "first": true,
+    "numberOfElements": 1,
+    "empty": false
+}
+```
 
