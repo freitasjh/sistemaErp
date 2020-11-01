@@ -111,3 +111,53 @@ curl --location --request PUT 'localhost:8080/sistema_erp/v1/produto/55a6ab79-af
     "codigoFabricante": null
 }'
 ```
+### Deletar Produto
+Retorno = "Status 204 No content"
+```console
+curl --location --request DELETE 'localhost:8080/sistema_erp/v1/produto/edb0f74d-4e54-4186-a527-b12b0e1b8efc'
+```
+
+### Salvar Produto
+Retorno = "Status 204 no content"
+```console
+curl --location --request POST 'localhost:8080/sistema_erp/v1/pedido' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "tipoVenda" : "V",
+    "valorTotal": 450.00,
+    "subTotal": 450.00,
+    "descontoPercentual": 0.00,
+    "descontoValor": 25.00,
+    "quantidadeTotal": 0.00,
+    "situacaoVenda": "A",
+    "listaDeItem": [
+        {
+            "produto": {
+                "id": "9c600384-41e3-464e-9823-28d3868df7c5",
+                "descricao": "Produto 1",
+                "valorAtacado": 0.00,
+                "valorVarejo": 150.00,
+                "ativado": true,
+                "tipoProduto": "PROD"
+            },
+            "quantidade": "2",
+            "valorUnitario": 150.00,
+            "valorTotal": 300.00
+        },
+        {
+            "produto": {
+                "id": "edb0f74d-4e54-4186-a527-b12b0e1b8efc",
+                "descricao": "Servico 2",
+                "valorAtacado": 0.00,
+                "valorVarejo": 150.00,
+                "ativado": true,
+                "tipoProduto": "SERV"
+            },
+             "quantidade": "1",
+            "valorUnitario": 150.00,
+            "valorTotal": 150.00
+        }
+        
+    ]
+}'
+```
