@@ -33,34 +33,6 @@ public class Produto implements Serializable{
 	private UUID id;
 	@Column(name = "codigo_interno")
 	private String codigoInterno;
-	public String getCodigoInterno() {
-		return codigoInterno;
-	}
-
-	public void setCodigoInterno(String codigoInterno) {
-		this.codigoInterno = codigoInterno;
-	}
-
-	public String getCodigoEan() {
-		return codigoEan;
-	}
-
-	public void setCodigoEan(String codigoEan) {
-		this.codigoEan = codigoEan;
-	}
-
-	public String getCodigoFabricante() {
-		return codigoFabricante;
-	}
-
-	public void setCodigoFabricante(String codigoFabricante) {
-		this.codigoFabricante = codigoFabricante;
-	}
-
-	public void setTipoProduto(TipoProduto tipoProduto) {
-		this.tipoProduto = tipoProduto;
-	}
-
 	@Column(name = "descricao")
 	@NotEmpty(message = "Informe a descrição do produto")
 	private String descricao;
@@ -136,5 +108,33 @@ public class Produto implements Serializable{
 
 	public void setTipoProduto(String codigo) {
 		this.tipoProduto = TipoProduto.valueOfCodigo(codigo);
+	}
+	
+	public String getCodigoInterno() {
+		return codigoInterno;
+	}
+
+	public void setCodigoInterno(String codigoInterno) {
+		this.codigoInterno = codigoInterno;
+	}
+
+	public String getCodigoEan() {
+		return codigoEan;
+	}
+
+	public void setCodigoEan(String codigoEan) {
+		this.codigoEan = codigoEan;
+	}
+
+	public String getCodigoFabricante() {
+		return codigoFabricante;
+	}
+
+	public void setCodigoFabricante(String codigoFabricante) {
+		this.codigoFabricante = codigoFabricante;
+	}
+
+	public void setTipoProduto(TipoProduto tipoProduto) {
+		this.tipoProduto = tipoProduto;
 	}
 }

@@ -36,7 +36,6 @@ public class ProdutoController {
 	
 	
 	@GetMapping(value = "/page")
-	@ResponseStatus(HttpStatus.ACCEPTED)
 	public ResponseEntity<Page<Produto>> findPage(
 			@RequestParam(value="page", defaultValue="0") Integer page, 
 			@RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage, 
